@@ -1,0 +1,61 @@
+@use '../global/setting' as *;
+
+.c-hamburger {
+	position: relative;
+	display: none;
+	width: 60px;
+	height: 60px;
+	background-color: transparent;
+	border: none;
+	margin-left: auto;
+	z-index: 10;
+
+	@include mq('md'){
+		display: block;
+	}
+}
+
+.c-hamburger__line {
+	display: block;
+	height: 2px;
+	position: absolute;
+	top: 30px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 24px;
+	background-color: $black;
+	transition: 0.4s;
+}
+
+.c-hamburger__line:before,
+.c-hamburger__line:after {
+	content: "";
+	display: block;
+	height: 100%;
+	position: absolute;
+	width: 100%;
+	background-color: $black;
+	transition: inherit;
+}
+
+.c-hamburger__line:before {
+	top: -6px;
+}
+
+.c-hamburger__line:after {
+	top: 6px;
+}
+
+.c-hamburger.is-active{
+	.c-hamburger__line {
+		background-color: transparent;
+	}
+	.c-hamburger__line::before {
+		top: 0;
+		transform: rotate(45deg);
+	}
+	.c-hamburger__line::after {
+		top: 0;
+		transform: rotate(-45deg);
+	}
+}

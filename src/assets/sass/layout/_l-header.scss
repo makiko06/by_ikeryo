@@ -1,0 +1,33 @@
+@use '../global/setting' as *;
+
+.l-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+}
+
+.p-header {
+  padding: 12px 0;
+}
+
+.p-header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.p-headerNav {
+  @include mq('md'){
+    display: none;
+  }
+}
+
+.p-headerNav_list {
+  display: flex;
+}
+
+.p-headerNav__link {
+  padding: 8px 20px;
+}
