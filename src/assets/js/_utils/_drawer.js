@@ -18,7 +18,6 @@ export class Drawer {
     this.flg = false;
     this.bgFix = new BgFix();
     this.focusHandle = (event) => modalFocus(event, this.DOM.menu);
-
     this._addEvent();
   }
 
@@ -45,7 +44,7 @@ export class Drawer {
     this.DOM.menu.classList.add(this.CLASS);
     this.DOM.hamburger.classList.add(this.CLASS);
     this.DOM.hamburger.setAttribute('aria-expanded', 'true');
-    this.DOM.hamburger.setAttribute('aria-label', 'メニューを開く');
+    this.DOM.hamburger.setAttribute('aria-label', 'メニューを閉じる');
     this.DOM.menu.setAttribute('aria-hidden', 'false');
     this.DOM.hamburger.focus();
     window.addEventListener('keydown', this.focusHandle);
